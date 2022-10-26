@@ -15,7 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { setLoginScreen } from "../store/auth/authSlice";
+import { setLoginScreen, setUserEmail } from "../store/auth/authSlice";
 import { useAppDispatch } from "../store/hooks";
 import { BpCheckbox } from "./ui/BpCheckbox";
 
@@ -92,6 +92,7 @@ export const SignInForm = () => {
 
     if (!isError) {
       dispatch(setLoginScreen("success sign up"));
+      dispatch(setUserEmail(values.email));
     }
   };
 
