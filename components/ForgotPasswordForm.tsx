@@ -31,7 +31,7 @@ export const ForgotPasswordForm: React.FC = () => {
     }
 
     dispatch(setLoginScreen("reset password"));
-    dispatch(setUserEmail(email))
+    dispatch(setUserEmail(email));
   };
 
   return (
@@ -42,7 +42,10 @@ export const ForgotPasswordForm: React.FC = () => {
           id="filled-adornment-email"
           type="email"
           value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={(event) => {
+            setEmail(event.target.value);
+            setErrorEmail(false);
+          }}
           endAdornment={
             <InputAdornment position="end">
               <EmailOutlinedIcon sx={{ color: "primary.dark" }} />
@@ -76,8 +79,8 @@ export const ForgotPasswordForm: React.FC = () => {
           color: "primary.main",
           width: 1,
           mb: "8px",
-          border: '1px solid',
-          borderColor: 'primary.main',
+          border: "1px solid",
+          borderColor: "primary.main",
           "&.MuiButton-root:hover": {
             backgroundColor: "primary.dark",
             color: "#FFF",

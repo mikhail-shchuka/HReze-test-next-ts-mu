@@ -37,7 +37,9 @@ export default function WelcomeCard() {
       <CardContent
         sx={{
           p: 4,
-          backgroundColor: "primary.main",
+          // backgroundColor: "primary.main",
+          backgroundImage: "url(/images/rectangle-green.png)",
+          backgroundSize: 'cover',
           flex: "1",
           display: "flex",
           flexDirection: "column-reverse",
